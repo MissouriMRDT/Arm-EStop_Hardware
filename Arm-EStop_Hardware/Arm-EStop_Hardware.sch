@@ -1,0 +1,429 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A2 23386 16535
+encoding utf-8
+Sheet 1 1
+Title "BMS "
+Date "2018-04-17"
+Rev "3"
+Comp "Mars Rover Design Team"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MRDT_ICs:LT1910 U6
+U 1 1 5AD49EFE
+P 6600 3400
+F 0 "U6" H 6650 3350 60  0000 C CNN
+F 1 "LT1910" H 6750 3950 60  0000 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 6600 3400 60  0001 C CNN
+F 3 "" H 6600 3400 60  0001 C CNN
+	1    6600 3400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C10
+U 1 1 5AD4A94A
+P 5050 3600
+F 0 "C10" H 5060 3670 50  0000 L CNN
+F 1 "10u" H 5060 3520 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5050 3600 50  0001 C CNN
+F 3 "" H 5050 3600 50  0001 C CNN
+	1    5050 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 3600 6200 3800
+Wire Wire Line
+	5550 3150 5650 3150
+Wire Wire Line
+	5650 3000 5550 3000
+Connection ~ 5550 3000
+$Comp
+L MRDT_Connectors:Molex_SL_02 U7
+U 1 1 5AD4F9B2
+P 7450 2950
+F 0 "U7" H 7500 2900 60  0001 C CNN
+F 1 "E_STOP" V 7600 3050 60  0000 C CNN
+F 2 "MRDT_Connectors:MOLEX_SL_02_Vertical" H 7450 2850 60  0001 C CNN
+F 3 "" H 7450 2850 60  0001 C CNN
+	1    7450 2950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L MRDT_Connectors:Molex_SL_04 U10
+U 1 1 5AD4FCDE
+P 8250 2950
+F 0 "U10" H 8300 2900 60  0001 C CNN
+F 1 "E_STOP+LED" V 8400 3200 60  0000 C CNN
+F 2 "MRDT_Connectors:MOLEX_SL_04_Vertical" H 8250 2950 60  0001 C CNN
+F 3 "" H 8250 2950 60  0001 C CNN
+	1    8250 2950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 5AD50271
+P 7000 3550
+F 0 "R13" V 7080 3550 50  0000 C CNN
+F 1 "10k" V 7000 3550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6930 3550 50  0001 C CNN
+F 3 "" H 7000 3550 50  0001 C CNN
+	1    7000 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 3150 7000 3150
+Wire Wire Line
+	7000 3400 7000 3150
+Connection ~ 7000 3150
+Wire Wire Line
+	6450 3950 6450 3800
+Connection ~ 6450 3800
+Connection ~ 6200 3800
+Wire Wire Line
+	7000 3700 7000 3800
+Connection ~ 7000 3800
+Wire Wire Line
+	7400 3150 7900 3150
+Wire Wire Line
+	8000 3150 8000 3250
+Wire Wire Line
+	8200 3800 8200 3150
+Wire Wire Line
+	8100 3150 8100 3450
+$Comp
+L Device:R R19
+U 1 1 5AD5479F
+P 8100 3600
+F 0 "R19" V 8000 3600 50  0000 C CNN
+F 1 "10k" V 8100 3600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8030 3600 50  0001 C CNN
+F 3 "" H 8100 3600 50  0001 C CNN
+	1    8100 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R18
+U 1 1 5AD54C65
+P 7800 3450
+F 0 "R18" V 7700 3450 50  0000 C CNN
+F 1 "4k" V 7800 3450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7730 3450 50  0001 C CNN
+F 3 "" H 7800 3450 50  0001 C CNN
+	1    7800 3450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8100 3750 8100 3800
+Connection ~ 8100 3800
+Wire Wire Line
+	7650 3450 7600 3450
+Text GLabel 7600 3450 0    60   Input ~ 0
+V_OUT
+Text GLabel 11500 2450 2    60   Output ~ 0
+V_OUT
+Text Notes 6000 2600 0    98   ~ 20
+E-Stop
+Wire Wire Line
+	5550 3000 5550 3150
+Wire Wire Line
+	7000 3150 7300 3150
+Wire Wire Line
+	6450 3800 7000 3800
+Wire Wire Line
+	6200 3800 6450 3800
+Wire Wire Line
+	7000 3800 8100 3800
+Wire Wire Line
+	8100 3800 8200 3800
+NoConn ~ 6800 3000
+NoConn ~ 6800 3300
+Wire Wire Line
+	7950 3450 8100 3450
+Text GLabel 5600 3300 0    50   Output ~ 0
+E-Stop_Gate
+Wire Wire Line
+	5650 3300 5600 3300
+Wire Wire Line
+	5050 3800 6200 3800
+$Comp
+L power:GND #PWR0156
+U 1 1 5F7CB5C5
+P 6450 3950
+F 0 "#PWR0156" H 6450 3700 50  0001 C CNN
+F 1 "GND" H 6455 3777 50  0000 C CNN
+F 2 "" H 6450 3950 50  0001 C CNN
+F 3 "" H 6450 3950 50  0001 C CNN
+	1    6450 3950
+	1    0    0    -1  
+$EndComp
+Connection ~ 8100 3450
+Wire Wire Line
+	11400 2800 11450 2800
+Text GLabel 11150 2450 0    50   Input ~ 0
+E-Stop_Gate
+$Comp
+L Device:Q_NMOS_GDS Q6
+U 1 1 5AD56EC5
+P 11200 2700
+F 0 "Q6" H 11400 2775 50  0000 L CNN
+F 1 "IRLS3034-7P" H 11400 2700 50  0000 L CNN
+F 2 "MRDT_Actives:IRLS3034_TO-263-7_P" H 11400 2625 50  0001 L CIN
+F 3 "" H 11200 2700 50  0001 L CNN
+	1    11200 2700
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_GDS Q7
+U 1 1 5AD56DEE
+P 11200 2200
+F 0 "Q7" H 11400 2275 50  0000 L CNN
+F 1 "IRLS3034-7P" H 11400 2200 50  0000 L CNN
+F 2 "MRDT_Actives:IRLS3034_TO-263-7_P" H 11400 2125 50  0001 L CIN
+F 3 "" H 11200 2200 50  0001 L CNN
+	1    11200 2200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	11200 2400 11200 2450
+Wire Wire Line
+	11150 2450 11200 2450
+Connection ~ 11200 2450
+Wire Wire Line
+	11200 2450 11200 2500
+Wire Wire Line
+	11400 2100 11450 2100
+Wire Wire Line
+	11450 2100 11450 2450
+Wire Wire Line
+	11500 2450 11450 2450
+Connection ~ 11450 2450
+Wire Wire Line
+	11450 2450 11450 2800
+Text GLabel 10500 2450 0    60   Input ~ 0
+V_In
+Wire Wire Line
+	11000 2100 10550 2100
+Wire Wire Line
+	10550 2100 10550 2450
+Wire Wire Line
+	10550 2800 11000 2800
+Wire Wire Line
+	10500 2450 10550 2450
+Connection ~ 10550 2450
+Wire Wire Line
+	10550 2450 10550 2800
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5DADC286
+P 8450 2950
+F 0 "#PWR?" H 8450 2800 50  0001 C CNN
+F 1 "+3.3V" H 8465 3123 50  0000 C CNN
+F 2 "" H 8450 2950 50  0001 C CNN
+F 3 "" H 8450 2950 50  0001 C CNN
+	1    8450 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 2950 8450 3250
+Wire Wire Line
+	8450 3250 8000 3250
+Text GLabel 5000 3000 0    60   Input ~ 0
+V_In
+$Comp
+L MRDT_Connectors:AndersonPP Conn?
+U 1 1 5DADD112
+P 2050 1750
+F 0 "Conn?" H 2000 1850 60  0000 R CNN
+F 1 "AndersonPP" H 2256 2031 60  0001 C CNN
+F 2 "" H 1900 1200 60  0001 C CNN
+F 3 "" H 1900 1200 60  0001 C CNN
+	1    2050 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L MRDT_Connectors:AndersonPP Conn?
+U 2 1 5DADD175
+P 2050 1550
+F 0 "Conn?" H 2000 1650 60  0000 R CNN
+F 1 "AndersonPP" H 2256 1831 60  0001 C CNN
+F 2 "" H 1900 1000 60  0001 C CNN
+F 3 "" H 1900 1000 60  0001 C CNN
+	2    2050 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L MRDT_Connectors:AndersonPP Conn?
+U 1 1 5DADE390
+P 4450 2000
+F 0 "Conn?" H 4100 2100 60  0000 L CNN
+F 1 "AndersonPP" H 4656 2281 60  0001 C CNN
+F 2 "" H 4300 1450 60  0001 C CNN
+F 3 "" H 4300 1450 60  0001 C CNN
+	1    4450 2000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L MRDT_Connectors:AndersonPP Conn?
+U 2 1 5DADE396
+P 4450 1800
+F 0 "Conn?" H 4100 1900 60  0000 L CNN
+F 1 "AndersonPP" H 4656 2081 60  0001 C CNN
+F 2 "" H 4300 1250 60  0001 C CNN
+F 3 "" H 4300 1250 60  0001 C CNN
+	2    4450 1800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L MRDT_Connectors:AndersonPP Conn?
+U 3 1 5DADF0CD
+P 4450 1600
+F 0 "Conn?" H 4100 1700 60  0000 L CNN
+F 1 "AndersonPP" H 4650 1150 60  0000 R CNN
+F 2 "" H 4300 1050 60  0001 C CNN
+F 3 "" H 4300 1050 60  0001 C CNN
+	3    4450 1600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5DADFC31
+P 2500 1700
+F 0 "#PWR?" H 2500 1450 50  0001 C CNN
+F 1 "GND" H 2505 1527 50  0000 C CNN
+F 2 "" H 2500 1700 50  0001 C CNN
+F 3 "" H 2500 1700 50  0001 C CNN
+	1    2500 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 1650 2500 1650
+Wire Wire Line
+	2500 1650 2500 1700
+Text GLabel 2500 1450 2    60   Output ~ 0
+V_In
+Wire Wire Line
+	2450 1450 2500 1450
+$Comp
+L power:GND #PWR?
+U 1 1 5DAE0DC5
+P 4000 1950
+F 0 "#PWR?" H 4000 1700 50  0001 C CNN
+F 1 "GND" H 4005 1777 50  0000 C CNN
+F 2 "" H 4000 1950 50  0001 C CNN
+F 3 "" H 4000 1950 50  0001 C CNN
+	1    4000 1950
+	1    0    0    -1  
+$EndComp
+Text GLabel 4000 1500 0    60   Input ~ 0
+V_OUT
+Text GLabel 4000 1700 0    60   Input ~ 0
+V_OUT
+Wire Wire Line
+	4050 1500 4000 1500
+Wire Wire Line
+	4000 1700 4050 1700
+Wire Wire Line
+	4050 1900 4000 1900
+Wire Wire Line
+	4000 1900 4000 1950
+Text GLabel 2350 3150 0    60   Input ~ 0
+V_In
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5DAE2EBF
+P 3350 3100
+F 0 "#PWR?" H 3350 2950 50  0001 C CNN
+F 1 "+3.3V" H 3365 3273 50  0000 C CNN
+F 2 "" H 3350 3100 50  0001 C CNN
+F 3 "" H 3350 3100 50  0001 C CNN
+	1    3350 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5DAE3088
+P 2850 3600
+F 0 "#PWR?" H 2850 3350 50  0001 C CNN
+F 1 "GND" H 2855 3427 50  0000 C CNN
+F 2 "" H 2850 3600 50  0001 C CNN
+F 3 "" H 2850 3600 50  0001 C CNN
+	1    2850 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 3150 3350 3100
+$Comp
+L Device:C C?
+U 1 1 5DAE7B34
+P 3300 3350
+F 0 "C?" H 3415 3396 50  0000 L CNN
+F 1 "10u" H 3415 3305 50  0000 L CNN
+F 2 "" H 3338 3200 50  0001 C CNN
+F 3 "~" H 3300 3350 50  0001 C CNN
+	1    3300 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5DAE7BF4
+P 2400 3350
+F 0 "C?" H 2515 3396 50  0000 L CNN
+F 1 "10u" H 2515 3305 50  0000 L CNN
+F 2 "" H 2438 3200 50  0001 C CNN
+F 3 "~" H 2400 3350 50  0001 C CNN
+	1    2400 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 3150 2400 3150
+$Comp
+L MRDT_Devices:OKI U?
+U 1 1 5DAE2CCB
+P 2650 3250
+F 0 "U?" H 2700 3200 60  0001 C CNN
+F 1 "3.3V" H 2850 3531 60  0000 C CNN
+F 2 "" H 2450 3150 60  0001 C CNN
+F 3 "" H 2450 3150 60  0001 C CNN
+	1    2650 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 3150 3300 3150
+Wire Wire Line
+	3300 3150 3300 3200
+Connection ~ 3300 3150
+Wire Wire Line
+	3300 3150 3350 3150
+Wire Wire Line
+	3300 3500 3300 3550
+Wire Wire Line
+	3300 3550 2850 3550
+Wire Wire Line
+	2400 3550 2400 3500
+Wire Wire Line
+	2400 3150 2400 3200
+Connection ~ 2400 3150
+Wire Wire Line
+	2400 3150 2450 3150
+Wire Wire Line
+	2850 3450 2850 3550
+Connection ~ 2850 3550
+Wire Wire Line
+	2850 3550 2400 3550
+Wire Wire Line
+	2850 3550 2850 3600
+Wire Wire Line
+	5050 3800 5050 3750
+Wire Wire Line
+	5050 3450 5050 3000
+Wire Wire Line
+	5050 3000 5550 3000
+Wire Wire Line
+	5050 3000 5000 3000
+Connection ~ 5050 3000
+$EndSCHEMATC
