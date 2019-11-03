@@ -79,8 +79,7 @@ $EndComp
 Wire Wire Line
 	6050 1900 6250 1900
 Wire Wire Line
-	6250 2150 6250 1900
-Connection ~ 6250 1900
+	6250 2150 6250 1950
 Wire Wire Line
 	5700 2700 5700 2550
 Connection ~ 5700 2550
@@ -88,8 +87,6 @@ Connection ~ 5450 2550
 Wire Wire Line
 	6250 2450 6250 2550
 Connection ~ 6250 2550
-Wire Wire Line
-	6650 1900 7150 1900
 Wire Wire Line
 	7250 1900 7250 2000
 Wire Wire Line
@@ -102,8 +99,6 @@ Text Notes 4000 1600 0    98   ~ 20
 Act E-Stop
 Wire Wire Line
 	4800 1750 4800 1900
-Wire Wire Line
-	6250 1900 6550 1900
 Wire Wire Line
 	5700 2550 6250 2550
 Wire Wire Line
@@ -700,4 +695,17 @@ Wire Wire Line
 	7250 2100 7350 2100
 Wire Wire Line
 	6250 2550 7450 2550
+Wire Wire Line
+	6250 1950 6650 1950
+Wire Wire Line
+	6650 1950 6650 1900
+Connection ~ 6250 1950
+Wire Wire Line
+	6250 1950 6250 1900
+Wire Wire Line
+	6550 1900 6550 2000
+Wire Wire Line
+	6550 2000 7150 2000
+Wire Wire Line
+	7150 2000 7150 1900
 $EndSCHEMATC
