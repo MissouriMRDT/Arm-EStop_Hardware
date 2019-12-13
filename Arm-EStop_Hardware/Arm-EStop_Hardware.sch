@@ -44,17 +44,6 @@ Wire Wire Line
 	4900 1750 4800 1750
 Connection ~ 4800 1750
 $Comp
-L MRDT_Connectors:Molex_SL_02 U4
-U 1 1 5AD4F9B2
-P 6700 1700
-F 0 "U4" H 6750 1650 60  0001 C CNN
-F 1 "E_STOP" V 6850 1800 60  0000 C CNN
-F 2 "MRDT_Connectors:MOLEX_SL_02_Vertical" H 6700 1600 60  0001 C CNN
-F 3 "" H 6700 1600 60  0001 C CNN
-	1    6700 1700
-	0    -1   -1   0   
-$EndComp
-$Comp
 L MRDT_Connectors:Molex_SL_04 U5
 U 1 1 5AD4FCDE
 P 7500 1700
@@ -91,9 +80,7 @@ Wire Wire Line
 	7450 2550 7450 1900
 Wire Wire Line
 	7350 1900 7350 2100
-Text GLabel 8900 2050 2    60   Output ~ 0
-V_Out_Act
-Text Notes 4000 1600 0    98   ~ 20
+Text Notes 4000 1550 0    98   ~ 20
 Act E-Stop
 Wire Wire Line
 	4800 1750 4800 1900
@@ -104,7 +91,7 @@ Wire Wire Line
 NoConn ~ 6050 1750
 NoConn ~ 6050 2050
 Text GLabel 4850 2050 0    50   Output ~ 0
-E-Stop_Gate
+V_Act_Gate
 Wire Wire Line
 	4900 2050 4850 2050
 Wire Wire Line
@@ -120,14 +107,8 @@ F 3 "" H 5700 2700 50  0001 C CNN
 	1    5700 2700
 	1    0    0    -1  
 $EndComp
-Text GLabel 8500 1800 0    50   Input ~ 0
-E-Stop_Gate
-Text GLabel 8800 1550 0    60   Input ~ 0
-V_In
-Wire Wire Line
-	7700 1700 7700 2000
-Wire Wire Line
-	7700 2000 7250 2000
+Text GLabel 8500 1850 0    50   Input ~ 0
+V_Act_Gate
 $Comp
 L MRDT_Connectors:AndersonPP Conn1
 U 1 1 5DADD112
@@ -198,8 +179,6 @@ Wire Wire Line
 	1850 1850 1900 1850
 Wire Wire Line
 	1900 1850 1900 1900
-Wire Wire Line
-	1850 1650 1900 1650
 $Comp
 L power:GND #PWR0102
 U 1 1 5DAE0DC5
@@ -211,10 +190,6 @@ F 3 "" H 3100 2100 50  0001 C CNN
 	1    3100 2100
 	1    0    0    -1  
 $EndComp
-Text GLabel 2750 1650 0    60   Input ~ 0
-V_Out_Act
-Text GLabel 2750 1850 0    60   Input ~ 0
-V_Out_Log
 Wire Wire Line
 	3150 1650 3100 1650
 Wire Wire Line
@@ -302,8 +277,6 @@ Wire Wire Line
 	4300 2200 4300 1750
 Wire Wire Line
 	4300 1750 4800 1750
-Wire Wire Line
-	4300 1750 4250 1750
 Connection ~ 4300 1750
 $Comp
 L Device:Fuse F1
@@ -327,10 +300,6 @@ F 3 "~" H 2950 1850 50  0001 C CNN
 	1    2950 1850
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2800 1650 2750 1650
-Wire Wire Line
-	2750 1850 2800 1850
 $Comp
 L Switch:SW_Push SW1
 U 1 1 5DB942E3
@@ -459,10 +428,6 @@ F 3 "" H 3600 3950 50  0001 C CNN
 	1    3600 3950
 	1    0    0    -1  
 $EndComp
-Text GLabel 3250 3200 1    60   Input ~ 0
-V_Out_Act
-Text GLabel 3600 3200 1    60   Input ~ 0
-V_Out_Log
 $Comp
 L MRDT_ICs:LT1910 U2
 U 1 1 5DBB5838
@@ -544,41 +509,30 @@ $EndComp
 Wire Wire Line
 	4300 4000 4300 3950
 Wire Wire Line
-	4300 3650 4300 3200
+	4300 3650 4300 3350
 Wire Wire Line
 	4300 3200 4800 3200
-Wire Wire Line
-	4300 3200 4250 3200
-Connection ~ 4300 3200
 Wire Wire Line
 	6850 3350 7000 3350
 Wire Wire Line
 	7000 3350 7000 3300
-Text GLabel 8500 2500 0    50   Input ~ 0
+Text GLabel 8500 2750 0    50   Input ~ 0
 V_Log_Gate
 $Comp
 L Device:Q_NMOS_GDS Q2
 U 1 1 5DBDD54C
-P 8750 2500
-F 0 "Q2" H 8956 2546 50  0000 L CNN
-F 1 "IRFS7437TRLPBFCT" H 8956 2455 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:TO-263-2" H 8950 2600 50  0001 C CNN
-F 3 "~" H 8750 2500 50  0001 C CNN
-	1    8750 2500
+P 8750 2750
+F 0 "Q2" H 8956 2796 50  0000 L CNN
+F 1 "IRFS7437TRLPBFCT" H 8956 2705 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TO-263-2" H 8950 2850 50  0001 C CNN
+F 3 "~" H 8750 2750 50  0001 C CNN
+	1    8750 2750
 	1    0    0    -1  
 $EndComp
-Text GLabel 8900 2750 2    60   Output ~ 0
-V_Out_Log
 Wire Wire Line
-	8900 2750 8850 2750
+	8850 2550 8850 2500
 Wire Wire Line
-	8850 2750 8850 2700
-Wire Wire Line
-	8850 2300 8850 2250
-Wire Wire Line
-	8850 2250 8800 2250
-Wire Wire Line
-	8550 2500 8500 2500
+	8550 2750 8500 2750
 $Comp
 L power:+3.3V #PWR0109
 U 1 1 5DC0BFD2
@@ -593,23 +547,15 @@ $EndComp
 $Comp
 L power:+3.3V #PWR0110
 U 1 1 5DC0C013
-P 7700 1700
-F 0 "#PWR0110" H 7700 1550 50  0001 C CNN
-F 1 "+3.3V" H 7715 1873 50  0000 C CNN
-F 2 "" H 7700 1700 50  0001 C CNN
-F 3 "" H 7700 1700 50  0001 C CNN
-	1    7700 1700
+P 7600 1850
+F 0 "#PWR0110" H 7600 1700 50  0001 C CNN
+F 1 "+3.3V" H 7615 2023 50  0000 C CNN
+F 2 "" H 7600 1850 50  0001 C CNN
+F 3 "" H 7600 1850 50  0001 C CNN
+	1    7600 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 8800 2250 0    60   Input ~ 0
-V_In
-Text GLabel 1900 1650 2    60   Output ~ 0
-V_In
-Text GLabel 4250 1750 0    60   Input ~ 0
-V_In
-Text GLabel 4250 3200 0    60   Input ~ 0
-V_In
-Text Notes 1400 1400 0    157  ~ 31
+Text Notes 1400 1350 0    157  ~ 31
 Power Connections
 Text Notes 1100 2600 0    157  ~ 31
 Circuit Power
@@ -617,7 +563,7 @@ Text Notes 2750 2600 0    157  ~ 31
 Indication
 Text Notes 5150 1400 0    157  ~ 31
 Gate Drivers
-Text Notes 7950 1400 0    157  ~ 31
+Text Notes 7900 1350 0    157  ~ 31
 Power Control
 Wire Notes Line
 	2750 3650 1050 3650
@@ -628,62 +574,34 @@ Wire Notes Line
 Text Notes 4000 3100 0    98   ~ 20
 Log Reset
 Wire Notes Line
-	2200 1450 2200 2350
-Wire Notes Line
 	1050 2650 3950 2650
 Wire Notes Line
 	2750 2350 2750 4200
 Wire Notes Line
-	1050 1150 1050 3650
-Wire Notes Line
 	1050 2350 3950 2350
 Wire Notes Line
-	3950 1150 3950 4400
+	1050 1400 9700 1400
 Wire Notes Line
-	7850 1150 7850 4400
-Wire Notes Line
-	1050 1450 9700 1450
-Wire Notes Line
-	1050 1150 9700 1150
+	1050 1100 9700 1100
 $Comp
 L Device:Q_NMOS_GDS Q1
 U 1 1 5DBE72B5
-P 8750 1800
-F 0 "Q1" H 8956 1846 50  0000 L CNN
-F 1 "IRFS7437TRLPBFCT" H 8956 1755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:TO-263-2" H 8950 1900 50  0001 C CNN
-F 3 "~" H 8750 1800 50  0001 C CNN
-	1    8750 1800
+P 8750 1850
+F 0 "Q1" H 8956 1896 50  0000 L CNN
+F 1 "IRFS7437TRLPBFCT" H 8956 1805 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TO-263-2" H 8950 1950 50  0001 C CNN
+F 3 "~" H 8750 1850 50  0001 C CNN
+	1    8750 1850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8850 1550 8800 1550
+	8850 1650 8850 1600
 Wire Wire Line
-	8850 1600 8850 1550
-Wire Wire Line
-	8500 1800 8550 1800
-Wire Wire Line
-	8850 2000 8850 2050
-Wire Wire Line
-	8850 2050 8900 2050
+	8500 1850 8550 1850
 Wire Notes Line
-	7850 2150 9700 2150
-Wire Notes Line
-	3950 2950 9700 2950
-Wire Notes Line
-	9700 1150 9700 2950
-Text GLabel 2900 3200 1    60   Input ~ 0
-V_In
-Text GLabel 1500 2950 0    60   Input ~ 0
-V_In
-Text GLabel 7250 2100 0    60   Input ~ 0
-V_Out_Act
-Wire Wire Line
-	7250 2100 7350 2100
+	7850 2300 9700 2300
 Wire Wire Line
 	6250 2550 7450 2550
-Wire Wire Line
-	7150 2000 7150 1900
 Wire Wire Line
 	6050 3350 6200 3350
 Wire Wire Line
@@ -699,15 +617,222 @@ Wire Wire Line
 	6200 3350 6550 3350
 Wire Wire Line
 	6250 1900 6250 1950
-Wire Wire Line
-	7150 2000 6650 2000
-Wire Wire Line
-	6650 2000 6650 1900
-Wire Wire Line
-	6550 1900 6550 1950
-Wire Wire Line
-	6550 1950 6250 1950
 Connection ~ 6250 1950
 Wire Wire Line
 	6250 1950 6250 2150
+$Comp
+L power:+12V #PWR?
+U 1 1 5DF43A27
+P 2000 1600
+F 0 "#PWR?" H 2000 1450 50  0001 C CNN
+F 1 "+12V" H 2000 1750 50  0000 C CNN
+F 2 "" H 2000 1600 50  0001 C CNN
+F 3 "" H 2000 1600 50  0001 C CNN
+	1    2000 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12VA #PWR?
+U 1 1 5DF43AAD
+P 2650 1600
+F 0 "#PWR?" H 2650 1450 50  0001 C CNN
+F 1 "+12VA" H 2650 1750 50  0000 C CNN
+F 2 "" H 2650 1600 50  0001 C CNN
+F 3 "" H 2650 1600 50  0001 C CNN
+	1    2650 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12L #PWR?
+U 1 1 5DF43BD4
+P 2400 1800
+F 0 "#PWR?" H 2400 1650 50  0001 C CNN
+F 1 "+12L" H 2415 1973 50  0000 C CNN
+F 2 "" H 2400 1800 50  0001 C CNN
+F 3 "" H 2400 1800 50  0001 C CNN
+	1    2400 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 1650 2800 1650
+Wire Wire Line
+	2400 1850 2400 1800
+Wire Wire Line
+	2400 1850 2800 1850
+Wire Wire Line
+	2000 1650 2000 1600
+Wire Wire Line
+	1850 1650 2000 1650
+Wire Wire Line
+	2650 1600 2650 1650
+Wire Notes Line
+	1050 1100 1050 3650
+Wire Notes Line
+	3950 1100 3950 4400
+$Comp
+L power:+12V #PWR?
+U 1 1 5DF53B87
+P 4200 1750
+F 0 "#PWR?" H 4200 1600 50  0001 C CNN
+F 1 "+12V" H 4200 1900 50  0000 C CNN
+F 2 "" H 4200 1750 50  0001 C CNN
+F 3 "" H 4200 1750 50  0001 C CNN
+	1    4200 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 1750 4300 1750
+$Comp
+L power:+12V #PWR?
+U 1 1 5DF56294
+P 4100 3300
+F 0 "#PWR?" H 4100 3150 50  0001 C CNN
+F 1 "+12V" H 4100 3450 50  0000 C CNN
+F 2 "" H 4100 3300 50  0001 C CNN
+F 3 "" H 4100 3300 50  0001 C CNN
+	1    4100 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 3300 4100 3350
+Wire Wire Line
+	4100 3350 4300 3350
+Connection ~ 4300 3350
+Wire Wire Line
+	4300 3350 4300 3200
+$Comp
+L power:+12V #PWR?
+U 1 1 5DF5D072
+P 8850 1600
+F 0 "#PWR?" H 8850 1450 50  0001 C CNN
+F 1 "+12V" H 8850 1750 50  0000 C CNN
+F 2 "" H 8850 1600 50  0001 C CNN
+F 3 "" H 8850 1600 50  0001 C CNN
+	1    8850 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5DF61BBB
+P 8850 2500
+F 0 "#PWR?" H 8850 2350 50  0001 C CNN
+F 1 "+12V" H 8850 2650 50  0000 C CNN
+F 2 "" H 8850 2500 50  0001 C CNN
+F 3 "" H 8850 2500 50  0001 C CNN
+	1    8850 2500
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	7850 1100 7850 4400
+$Comp
+L power:+12VA #PWR?
+U 1 1 5DF68F1C
+P 9150 2150
+F 0 "#PWR?" H 9150 2000 50  0001 C CNN
+F 1 "+12VA" H 9150 2300 50  0000 C CNN
+F 2 "" H 9150 2150 50  0001 C CNN
+F 3 "" H 9150 2150 50  0001 C CNN
+	1    9150 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12L #PWR?
+U 1 1 5DF6B750
+P 9100 3050
+F 0 "#PWR?" H 9100 2900 50  0001 C CNN
+F 1 "+12L" H 9115 3223 50  0000 C CNN
+F 2 "" H 9100 3050 50  0001 C CNN
+F 3 "" H 9100 3050 50  0001 C CNN
+	1    9100 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 3100 9100 3100
+Wire Wire Line
+	9100 3100 9100 3050
+Wire Wire Line
+	8850 2950 8850 3100
+Wire Wire Line
+	9150 2150 9150 2200
+Wire Wire Line
+	9150 2200 8850 2200
+Wire Wire Line
+	8850 2050 8850 2200
+Wire Notes Line
+	9700 3150 7850 3150
+Wire Notes Line
+	9700 1100 9700 3150
+Wire Notes Line
+	3950 2950 7850 2950
+Wire Notes Line
+	2200 1400 2200 2350
+$Comp
+L power:+12V #PWR?
+U 1 1 5DF7A76A
+P 1500 2900
+F 0 "#PWR?" H 1500 2750 50  0001 C CNN
+F 1 "+12V" H 1500 3050 50  0000 C CNN
+F 2 "" H 1500 2900 50  0001 C CNN
+F 3 "" H 1500 2900 50  0001 C CNN
+	1    1500 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 2900 1500 2950
+Wire Wire Line
+	7150 1900 7150 1950
+$Comp
+L power:+12V #PWR?
+U 1 1 5DF8DC1D
+P 2900 3200
+F 0 "#PWR?" H 2900 3050 50  0001 C CNN
+F 1 "+12V" H 2900 3350 50  0000 C CNN
+F 2 "" H 2900 3200 50  0001 C CNN
+F 3 "" H 2900 3200 50  0001 C CNN
+	1    2900 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12VA #PWR?
+U 1 1 5DF8DC70
+P 3250 3200
+F 0 "#PWR?" H 3250 3050 50  0001 C CNN
+F 1 "+12VA" H 3250 3350 50  0000 C CNN
+F 2 "" H 3250 3200 50  0001 C CNN
+F 3 "" H 3250 3200 50  0001 C CNN
+	1    3250 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12L #PWR?
+U 1 1 5DF8DCC3
+P 3600 3200
+F 0 "#PWR?" H 3600 3050 50  0001 C CNN
+F 1 "+12L" H 3615 3373 50  0000 C CNN
+F 2 "" H 3600 3200 50  0001 C CNN
+F 3 "" H 3600 3200 50  0001 C CNN
+	1    3600 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12VA #PWR?
+U 1 1 5DF8DD16
+P 7750 1700
+F 0 "#PWR?" H 7750 1550 50  0001 C CNN
+F 1 "+12VA" H 7700 1850 50  0000 C CNN
+F 2 "" H 7750 1700 50  0001 C CNN
+F 3 "" H 7750 1700 50  0001 C CNN
+	1    7750 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 1700 7750 2100
+Wire Wire Line
+	7350 2100 7750 2100
+Wire Wire Line
+	7600 1850 7600 2000
+Wire Wire Line
+	7600 2000 7250 2000
+Wire Wire Line
+	6250 1950 7150 1950
 $EndSCHEMATC
